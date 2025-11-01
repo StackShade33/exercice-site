@@ -1,0 +1,121 @@
+/* Bouton du footer */
+
+footer {
+    position: relative; /* permet de positionner le bouton à l'intérieur du footer. Devient le parent de référence de position:absolute */
+    min-height: 80px; /* Assure que le footer existe visuellement car le bouton en position absolute sort du flux de la page */
+    padding: 20px;
+}
+
+.button-welcome {
+    position: absolute; /* se place par rapport à position: relative; et si absence, à toute la page */
+    right: 20px;  /* distance du bord droit */
+    bottom: 10px; /* distance du bas */
+}
+
+/* Bouton de bas de formulaire*/
+
+form section:last-of-type div:nth-child(2) { /* cible le 2ème div de la dernière section du formulaire */
+    text-align: center; /* centre les éléments inline comme les <input> de type bouton */
+}
+
+.button{
+    margin: 0 10px; /* espace les boutons */
+}
+
+/* Mise en forme*/
+
+form {
+    max-width: 600px; /* largeur du formulaire */
+    margin: 0 auto; /* centre le formulaire horizontalement */
+    padding: 20px;
+    border: solid #8844cc;
+    border-radius: 10px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.603) ; /* 1ère valeur : décalage horizontal (positif = droite, négatif = gauche)
+                                                        2ème valeur : décalage vertical (positif = bas, négatif = haut)
+                                                        3ème valeur : flou (plus c'est grand, plus c'est flou)
+                                                        4ème valeur (optionnelle) : étalement de l'ombre
+                                                        Couleur : souvent en rgba() pour contrôler la transparence*/
+    text-align: left;
+}
+
+body{
+    color: #8844cc;
+}
+
+fieldset {
+    background-color: rgba(136,68,204,0.1); /* violet très clair avec transparence */
+    margin-bottom: 20px;
+    border-color: #8844cc;
+    padding: 15px;
+}
+
+legend{
+    font-weight: bold;
+}
+
+input[type="file"] { /* Pour la bordure du bouton "parcourir = type "file"*/
+    border: 1px solid #8844cc;
+    border-radius: 5px;
+    padding: 5px 30px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: #8844cc;
+}
+
+.contact{
+    position: relative; /* INDISPENSABLE pour que ::before se positionne par rapport à cette div */
+    padding-top: 15px; /* Fonctionne ici et pas dans ::before car en position absolute --> sort du flux --> aucun effet */
+    margin-top: 15px; /* Fonctionne ici et pas dans ::before car en position absolute --> sort du flux --> aucun effet */
+}
+
+.contact::before { /* pseudo élément venant avant la classe contact, ivisible, créépar CSS pour placer le trait */
+    content: ""; /* obligatoire (même vide ici car pas de texte) pour permettre au pseudo élément d'exister. */
+    border-top: 2px solid #8844cc; /* le style de la barre */
+    position: absolute; /* le pseudo élément sort du flux --> La ligne "flotte" au-dessus et ne pousse pas le texte */
+    top: 0; /* place le pseudo-élément, donc la barre tout en haut de la div */
+    width: 70%; /* la largeur de la barre */
+    
+    /* combinaison left et transform pour centrer la barre */
+    left: 50%; /* positionne le début de la ligne au milieu */
+    transform: translateX(-50%); /* décale la ligne de la moitié de sa largeur vers la gauche */
+
+}
+
+#recipient {
+    background-color: #e0e0e0; /* gris clair */
+}
+
+/* Uniformisation des champs */
+
+fieldset > div {  /* Cible tous les <div> qui sont directement dans un <fieldset> */
+    display: flex;  /* Met le label et le champ côte à côte sur la même ligne */
+    align-items: center;  /* Centre verticalement le label et le champ */
+    margin-bottom: 10px;  /* Ajoute un espace de 10px entre chaque ligne de formulaire */
+}
+
+fieldset > div > label:first-child {  /* Cible uniquement les labels qui sont le 1er enfant de leur div (donc pas les labels de radio/checkbox car après input) */
+    width: 200px;  /* Largeur fixe pour tous les labels → permet l'alignement des champs */
+    text-align: left;  /* Le texte du label reste aligné à gauche */
+    margin-right: 10px;  /* Ajoute un espace de 10px entre le label et le champ */
+    flex-shrink: 0;  /* Empêche le label de rétrécir si l'espace manque */
+}
+
+#firstname,  /* Cible le champ Prénom */
+#lastname,  /* Cible le champ Nom */
+#email,  /* Cible le champ Email */
+#recipient,  /* Cible le champ Destinataire (liste déroulante) */
+#topic,  /* Cible le champ Sujet */
+#message,  /* Cible le champ Message (textarea) */
+#attachment {  /* Cible le champ Ajouter une pièce jointe */
+    width: 100%;  /* Le champ prend toute la largeur disponible dans son conteneur */
+    max-width: 350px;  /* Mais ne dépasse jamais 350px → tous les champs ont la même largeur ! */
+    padding: 8px;  /* Ajoute un espace intérieur de 8px pour que le texte ne colle pas aux bords */
+    border: 1px solid #8844cc;  /* Bordure violette de 1px */
+    border-radius: 4px;  /* Coins arrondis de 4px */
+}
+
+#message {  /* Cible spécifiquement le champ Message (textarea) */
+    resize: vertical;  /* Permet de redimensionner uniquement en hauteur (pas en largeur pour garder l'alignement) */
+}

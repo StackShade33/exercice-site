@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0; /* Supprime toutes les marges par défaut que le navigateur applique aux éléments (body, h1...)*/
+    padding: 0; /* Supprime toutes les marges par défaut que le navigateur applique aux éléments*/
+    background-color: #f3f3f3;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6; /* espacement entre les lignes pour aérer. Recommandé entre 1.5 et 1.8 */
+}
+
+.container {
+    max-width: 1200px;      /* largeur maximale */
+    box-sizing: border-box; /* pour inclure le padding et la bordure dans la largeur maximale */
+    margin: 0 auto;         /* haut et bas à 0, auto pour les côtés = centre horizontalement */
+    padding: 0 40px; /* marge entre le texte et le bord du container: 0 pour haut et bas, 40 pour les côtés */
+    overflow: auto; /* Empêche le margin collapse */
+    background-color: #ffffff; /* couleur du container */
+    min-height: 100vh; /* hauteur minimum : 100% de la hauteur de l'écran 
+    (viewport height = hauteur de la fenêtre du navigateur différent de viewport width = la largeur) */
+}
+
+h1{
+    text-align: center;
+    font-weight: bold; /* Gras */
+    color: #8844cc;
+}
+
+/* SURVOL LIENS ET BOUTONS */
+
+a{
+    color:#ffffff;
+    transition: color 0.3s ease; /* animation de la transition */
+}
+
+a:hover{
+    color: #fffa7c /* jaune au survol */
+}
+
+.button{
+    background-color: #8844cc;
+    color:#ffffff;
+    text-decoration: none; /* supprime le soulignement */
+    border: none; /* supprime la bordure par défaut */
+    border-radius: 10px;
+    padding: 10px 20px; /* espace dans le bouton */
+    cursor: pointer; /* petite main pour cliquer */
+    transition: color 0.3s ease; /* animation de la transition */
+}
+
+.button:hover{
+    color: #fffa7c ; /* jaune au survol */
+}

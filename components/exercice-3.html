@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exercice 3 : Réaliser un formulaire de contact">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style-exercice-3.css">
+    <title>Exercice 3</title>
+</head>
+<body>
+    <div class="container">
+    <header>
+        <h1>Exercice 3 : Formulaire de contact</h1>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <section>
+                <fieldset>
+                    <legend>Informations personnelles</legend>
+                    <div>
+                        <input type="radio" name="gender" id="Mlle" value="Mlle" checked>
+                        <label for="Mlle">Mlle</label>
+                        
+                        <input type="radio" name="gender" id="Mme" value="Mme">
+                        <label for="Mme">Mme</label>
+
+                        <input type="radio" name="gender" id="M" value="M.">
+                        <label for="M">M.</label>
+                    </div>
+                    <div>
+                        <label for="firstname">Prénom</label>
+                        <input type="text" name="firstname" id="firstname" placeholder="Votre prénom">
+                    </div>
+                    <div>
+                        <label for="lastname">Nom *</label>
+                        <input type="text" name="lastname" id="lastname" placeholder="Votre nom" required>
+                    </div>
+                    <div>
+                        <label for="email">Email *</label>
+                        <input type="email" name="email" id="email" placeholder="Votre adresse mail" required>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section>
+                <fieldset>
+                    <legend>Votre message</legend>
+                    <div>
+                        <label for="recipient">Destinataire</label>
+                        <select name="recipient" id="recipient">
+                            <option value="general">Général</option>
+                            <option value="accounting">Comptabilité</option>
+                            <option value="after-sales-service">SAV</option>
+                            <option value="customer-service">Service client</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="topic">Sujet *</label>
+                        <input type="text" name="topic" id="topic" placeholder="L'objet de votre message" required>
+                    </div>
+                    <div>
+                        <label for="message">Message *</label>
+                        <textarea name="message" id="message" cols="60" rows="10" placeholder="Saisissez votre message ici" required></textarea>
+                    </div>
+                    <div>
+                        <label for="attachment" >Ajouter une pièce jointe</label>
+                        <input type="file" name="attachment" id="attachment">
+                    </div>
+                </fieldset>
+            </section>
+
+            <section>
+                <fieldset>
+                    <legend>Options</legend>
+                    <div>
+                        <input type="checkbox" name="copy" id="copy">
+                        <label for="copy">Recevoir une copie du message</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="offers" id="offers">
+                        <label for="offers">Recevoir nos offres</label>
+                    </div>
+                    <div class="contact">
+                        <label>Être contacté par un conseiller :</label>
+                    
+                        <input type="radio" name="contact" id="contact-no" value="No">
+                        <label for="contact-no">Non</label>
+                        
+                        <input type="radio" name="contact" id="contact-phone" value="phone">
+                        <label for="contact-phone">Par téléphone</label>
+                    
+                        <input type="radio" name="contact" id="contact-email" value="email" checked>
+                        <label for="contact-email">Par email</label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section>
+                <div>
+                    <p>*: champs obligatoires</p>
+                </div>
+                <div>
+                    <input class="button" type="submit" name="submit" id="submit" value="Valider">
+                    <input class="button" type="reset" name="reset" id="reset" value="Effacer">
+                </div>
+            </section>
+        </form>
+    </main>
+
+    <footer> <!--Les deux classes sont ensemble dans les guillemets-->
+        <a class="button button-welcome" href="../index.html">Retour Accueil</a>
+    </footer>
+    </div>
+</body>
+</html>

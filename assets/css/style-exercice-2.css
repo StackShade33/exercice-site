@@ -1,0 +1,98 @@
+/* Bouton du footer */
+
+footer {
+    position: relative; /* permet de positionner le bouton à l'intérieur du footer. Devient le parent de référence de position:absolute */
+    min-height: 80px; /* Assure que le footer existe visuellement car le bouton en position absolute sort du flux de la page */
+    padding: 20px; /* Ajoute de l'air, du confort visuel */
+}
+
+.button {
+    position: absolute; /* se place par rapport à position: relative; et si absence, à toute la page */
+    right: 20px;  /* distance du bord droit */
+    bottom: 10px; /* distance du bas */
+}
+
+/* Les deux tableaux */
+
+caption {
+    caption-side: bottom; /* place la légende sous le tableau */
+    padding-top: 8px; /* petit espace entre le tableau et la légende */
+    text-align: center; /* pour centrer le texte */
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse; /* pour éviter les double bordures */
+    margin: 0 auto; /* pour centrer les tableaux horizontalement */
+    margin-bottom: 50px; /* pour mettre de l'espace sous les tableaux, aérer la page*/
+}
+
+table th,
+table td {
+    border: 1px solid black; /* couleur et épaisseur de la bordure */
+    padding: 8px; /* espace à l'intérieur des cellules */
+    text-align: center; /* centrer le texte si tu veux */
+}
+
+/* Premier tableau */
+
+.tableau-caisse{
+    width:80%; /* largeur du tableau */
+}
+
+.tableau-caisse caption{
+    background-color: #f3f3f3;
+}
+
+/* Couleurs des lignes du tableau */
+.tableau-caisse thead tr,
+.tableau-caisse tfoot tr {
+    background-color: #555555; /* gris foncé */
+}
+
+/* Lignes paires (even) en gris moyen */
+.tableau-caisse tbody tr:nth-child(even){
+    background-color: #b3b3b3; /* gris moyen */
+}
+
+/* Lignes impaires (odd) en gris clair */
+.tableau-caisse tbody tr:nth-child(odd) {
+    background-color: #e6e6e6; /* gris clair */
+}
+
+/* Deuxième tableau */
+
+.tableau-horaires{
+    width:60%; /* largeur du tableau */
+}
+
+.tableau-horaires caption {
+     border: 1px solid;
+     border-top: none; /* évite que les deux bordures s'additionnent pour faire une bordure plus grosse */
+     background-color: #fffa7c;
+}
+
+.tableau-horaires thead tr{
+    background-color: #fffa7c;
+}
+
+/* Couleurs des cellules avec les jours */
+.tableau-horaires tbody tr:nth-child(even) td:first-child{ /* even = pair */
+    background-color: #fffa7c; 
+}
+
+.tableau-horaires tbody tr:nth-child(odd) td:first-child { /* odd = impair */
+    background-color: #b9ffd6;
+}
+
+/* Cellules "Ouvert" */
+.tableau-horaires td.ouvert {
+    background-color: #08c3ff;
+    color: white;
+}
+
+/* Cellules "Fermé" */
+.tableau-horaires td.ferme {
+    background-color: #8844cc;
+    color: white;          
+}
